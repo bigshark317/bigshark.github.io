@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+<title>出校通行证(2分钟内有效)</title>
+<link rel="stylesheet" href="css/weui.min.css">
+<link rel="stylesheet" href="css/app.css">
+<style>
+	hcfy-result.__hcfy__result__loaded__.__hcfy__result__both__ {
+		border: 1px dotted
+	}
+</style>
+<style class="mpa-style-fix ImageGatherer">
+	.FotorFrame {
+		position: fixed!important
+	}
+</style>
+<style class="mpa-style-fix SideFunctionPanel">
+	.weui-desktop-online-faq__wrp {
+		top: 304px!important;
+		bottom: unset!important
+	}
+	
+	.weui-desktop-online-faq__wrp .weui-desktop-online-faq__switch {
+		width: 38px!important
+	}
+</style>
+</head>
+
+<body ontouchstart="" mpa-version="7.16.14" mpa-extension-id="ibefaeehajgcpooopoegkifhgecigeeg">
+
+    <div id="bodyDiv">
+        <p onclick="changeUI()" id="myColorUI" style="text-align:center;background:darkred;"><br><img src="./img/pass2.png" width="330px" height="225px" alt=""><br>
+            <font style="font-size:100px">
+                <script type="text/javascript">
+                    var t = new Date();
+                    var hour = t.getHours();
+                    var minute = t.getMinutes();
+                    var second = t.getSeconds();
+                    var nowTime = hour + ((minute < 10) ? ":0" : ":") + minute + ((second < 10) ? ":0" : ":") + second;
+                    document.write(nowTime);
+                </script>
+            </font>
+        </p>
+        <div class="weui-cells__title">学生出校通行证</div>
+        <div class="weui-cells">
+            <div class="weui-cell  weui-cell_example">
+                <div class="weui-cell__hd"><img src="./img/person.png" alt="" style="width: 20px; margin-right: 16px; display: block;"></div>
+                <div class="weui-cell__bd">
+                    <p>学号：
+                        <script>
+                            var va1 = localStorage.value1
+                            document.write(va1)
+                        </script>
+                    </p>
+                </div>
+            </div>
+            <div class="weui-cell  weui-cell_example">
+                <div class="weui-cell__hd"><img src="./img/person.png" alt="" style="width: 20px; margin-right: 16px; display: block;"></div>
+                <div class="weui-cell__bd">
+                    <p>姓名：
+                        <script>
+                            var va2 = localStorage.value2
+                            document.write(va2)
+                        </script>
+                    </p>
+                </div>
+            </div>
+            <div class="weui-cell  weui-cell_example">
+                <div class="weui-cell__hd"><img src="./img/person.png" alt="" style="width: 20px; margin-right: 16px; display: block;"></div>
+                <div class="weui-cell__bd">
+                    <p>学院：
+                        <script>
+                            var va3 = localStorage.value3
+                            document.write(va3)
+                        </script>
+                    </p>
+                </div>
+            </div>
+            <div class="weui-cell  weui-cell_example">
+                <div class="weui-cell__hd"><img src="./img/time.png" alt="" style="width: 20px; margin-right: 16px; display: block;"></div>
+                <div class="weui-cell__bd">
+                    <p>时间：
+                        <script type="text/javascript">
+                            var t = new Date();
+                            var year = t.getFullYear();
+                            var month = t.getMonth() + 1;
+                            var day = t.getDate();
+                            var nowTime = year + "/" + month + "/" + day;
+                            document.write(nowTime);
+                        </script>
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <div class="weui-footer">
+            <p>版权所有 © 辽宁大学</p>
+            <input type="color" id="myColor" onchange="ChangeColor()" style="opacity:0;">
+        </div>
+    </div>
+    <script type="text/javascript">
+        var color;
+        var UI;
+
+        function ChangeColor() {　
+            color = document.getElementById("myColor").value
+            console.log(color);　　　　　　　　　　　　　　 //改变颜色的事件
+        }
+
+        function changeUI() {　
+            UI = document.getElementById("myColorUI")
+            UI.style.background = color
+        }
+    </script>
+
+    <div class="mpa-sc mpa-plugin-article-gatherer mpa-new mpa-rootsc" data-z="100" style="display: block;" id="mpa-rootsc-article-gatherer"></div>
+    <div class="mpa-sc mpa-plugin-image-gatherer mpa-new mpa-rootsc" data-z="100" style="display: block;" id="mpa-rootsc-image-gatherer"></div>
+    <div class="mpa-sc mpa-plugin-page-clipper mpa-new mpa-rootsc" data-z="100" style="display: block;" id="mpa-rootsc-page-clipper"></div>
+    <div class="mpa-sc mpa-plugin-text-gatherer mpa-new mpa-rootsc" data-z="100" style="display: block;" id="mpa-rootsc-text-gatherer"></div>
+    <div class="mpa-sc mpa-plugin-video-gatherer mpa-new mpa-rootsc" data-z="100" style="display: block;" id="mpa-rootsc-video-gatherer"></div>
+    <div class="mpa-sc mpa-plugin-side-function-panel mpa-new mpa-rootsc" data-z="110" style="display: block;" id="mpa-rootsc-side-function-panel"></div>
+    <div class="mpa-sc mpa-plugin-notifier mpa-new mpa-rootsc" data-z="120" style="display: block;" id="mpa-rootsc-notifier"></div>
+    <div class="mpa-sc mpa-plugin-notification-manager mpa-new mpa-rootsc" data-z="130" style="display: block;" id="mpa-rootsc-notification-manager"></div>
+</body>
+<div style="all: initial;">
+    <div id="__hcfy__" style="all: initial;"></div>
+</div>
+<div style="all: initial;">
+    <div style="all: initial;"></div>
+</div>
+
+</html>

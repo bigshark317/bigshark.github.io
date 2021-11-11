@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+<title>申请详情</title>
+<link rel="stylesheet" href="css/weui.min.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body ontouchstart>
+<p id="bear"></p>
+<div id="form">
+  <form id="sub_form">
+    <div class="weui-cells__title">
+                    <script>
+                        var va3 = localStorage.value3
+                        document.write(va3)
+                    </script>
+                    <script>
+                        var va1 = localStorage.value1
+                        document.write(va1)
+                    </script>
+                    <script>
+                        var va2 = localStorage.value2
+                        document.write(va2)
+                    </script>
+                </div>
+	<input type="hidden" id="qingjiaid" name="qingjiaid" value="541611">
+	<input type="hidden" id="cxsjh" name="cxsjh" value="2021-4-11">
+	<input type="hidden" id="fxsjh" name="fxsjh" value="2021-4-11">
+	<input type="hidden" id="mddh" name="mddh" value="沈阳市内">
+	
+	<div class="weui-cells weui-cells_form">
+      <div class="weui-cells__title">目的地</div>
+      <div class="weui-cells">
+        <div class="weui-cell">
+          <div class="weui-cell__bd">
+            <input class="weui-input" name="mdd" type="text" readonly disabled id="mdd" required placeholder="请选择目的地" autocomplete="off" value="沈阳市内">
+          </div>
+          <div class="weui-cell__ft"> <i class="weui-icon-warn"></i> </div>
+        </div>
+      </div>
+    </div>
+	
+
+	<div class="weui-cells weui-cells_form">
+      <div class="weui-cells__title">申请出校日期</div>
+      <div class="weui-cells">
+        <div class="weui-cell">
+          <div class="weui-cell__bd">
+            <input class="weui-input" name="cxsj" type="text" readonly disabled id="cxsj" required placeholder="请选择您的出校时间" autocomplete="off" value="2021-4-11">
+          </div>
+          <div class="weui-cell__ft"> <i class="weui-icon-warn"></i> </div>
+        </div>
+      </div>
+    </div>
+	
+	
+	<div class="weui-cells weui-cells_form">
+      <div class="weui-cells__title">申请返校日期</div>
+      <div class="weui-cells">
+        <div class="weui-cell">
+          <div class="weui-cell__bd">
+		  
+            <input class="weui-input" name="fxsj" type="text" readonly  id="fxsj" required placeholder="请选择您的返校时间" autocomplete="off"  value="2021-4-11">
+          </div>
+          <div class="weui-cell__ft"> <i class="weui-icon-warn"></i> </div>
+        </div>
+      </div>
+    </div>
+	
+	
+	
+    <div class="weui-cells weui-cells_form">
+      <div class="weui-cells__title">外出原由</div>
+	  <div class="weui-cell ">
+          <div class="weui-cell__bd">
+            <input class="weui-textarea" placeholder="出校应聘" name="cxyy" id="cxyy" rows="5" autocomplete="on" maxlength="200">
+        </div>
+        </div>
+    </div>
+	
+	
+	<div class="weui-cells weui-cells_form">
+      <div class="weui-cells__title">实际出校时间</div>
+      <div class="weui-cells">
+        <div class="weui-cell">
+          <div class="weui-cell__bd">
+            <input class="weui-input" name="sjcxsj" type="text" readonly id="sjcxsj" required  autocomplete="off" value="">
+          </div>
+          <div class="weui-cell__ft"> <i class="weui-icon-warn"></i> </div>
+        </div>
+      </div>
+    </div>
+
+
+	<div class="weui-cells weui-cells_form">
+      <div class="weui-cells__title">实际返校时间</div>
+      <div class="weui-cells">
+        <div class="weui-cell">
+          <div class="weui-cell__bd">
+            <input class="weui-input" name="sjfxsj" type="text" readonly id="sjfxsj"   autocomplete="off"  value="">
+          </div>
+          <div class="weui-cell__ft"> <i class="weui-icon-warn"></i> </div>
+        </div>
+      </div>
+    </div>
+	
+	
+	<div class="weui-cells weui-cells_form">
+      <div class="weui-cells__title">出校审批情况</div>
+      <div class="weui-cells">
+        <div class="weui-cell">
+          <div class="weui-cell__bd">
+            <input class="weui-input" name="daoyuan" type="text" disabled readonly id="daoyuan" required placeholder="请选择您的审批意见" autocomplete="off"  value="同意">
+          </div>
+          <div class="weui-cell__ft"> <i class="weui-icon-warn"></i> </div>
+        </div>
+      </div>
+    </div>
+	
+	
+	<div class="weui-cells weui-cells_form">
+      <div class="weui-cells__title"><font color=red>行程轨迹</font></div>
+	  <div class="weui-cell ">
+          <div class="weui-cell__bd">
+            <textarea id="xcgj" class="weui-textarea" required  name="xcgj" id="cxgj" rows="5" autocomplete="off" maxlength="500">出校：辽大（ ）校区至（ ），途经（ ），出行方式（ ）；返校：（ ）至辽大（ ）校区，途经（ ），出行方式（ ）。</textarea>
+          </div>
+		  
+        </div>
+		
+		<a href="javascript:" id="tjxc" class="weui-btn weui-btn_mini weui-btn_default" style="float:right">提交行程</a>
+		
+    </div>
+	
+
+	<div class="weui-cells weui-cells_form">
+      <div class="weui-cells__title">返校审批情况</div>
+      <div class="weui-cells">
+        <div class="weui-cell">
+          <div class="weui-cell__bd">
+            <input class="weui-input" name="fxdy" type="text" disabled readonly id="fxdy" required placeholder="请选择您的审批意见" autocomplete="off"  value="未审批">
+          </div>
+          <div class="weui-cell__ft"> <i class="weui-icon-warn"></i> </div>
+        </div>
+      </div>
+    </div>
+	
+	
+	
+	
+	<br/>
+	<p  style="text-align:center">
+	
+		<a href="getpass.html" id="cxtxz" class="weui-btn  weui-btn_primary">生成出校通行证</a>
+		<a href="return.html" id="fxtxz" class="weui-btn weui-btn_primary">生成返校通行证</a>
+		<a href="list.html" class="weui-btn  weui-btn_primary">返回申请列表</a>
+	</p>
+	
+  </form>
+</div>
+<br/>
+<div class="weui-footer">
+  <p class="weui-footer__text">版权所有 &copy; 辽宁大学</p>
+</div>
+<script type="text/javascript" src="js/weui.min.js"></script>
+<script type="text/javascript" src="js/qingjiainfo.js"></script>
+
+</body>
+</html>

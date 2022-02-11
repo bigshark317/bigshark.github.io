@@ -17,13 +17,55 @@
 			padding: 0;
 			font-family: sans-serif;
 			background: linear-gradient(-135deg, #c9fdda, #4ca3ff);
+			perspective: 1000px;
 		}
+		@keyframes rota {
+		            from {}
+		            to {
+		                transform: rotateY(360deg);
+		            }
+		        }
+		.rot {
+				position: relative;
+				width: 300px;
+				height: 170px;
+				margin: 0 auto;
+				border-radius: 40px;
+				transform-style: preserve-3d;
+				animation: rota 50s linear infinite;
+			}
+			
+			.rot div {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-image: url(wall.jpg);
+				background-size: 100% 100%;
+			}
+			
+			.rot .img1 {
+				transform: translateZ(250px);
+			}
+			
+			.rot .img2 {
+				transform: translateZ(-250px) rotateY(180deg) ;
+			}
+			
+			.rot .img3 {
+				transform: translateX(-250px) rotateY(-90deg) ;
+			}
+			
+			.rot .img4 {
+				transform: translateX(250px) rotateY(90deg) ;
+			}
 		
 		.box {
 			width: 300px;
 			padding: 40px;
 			position: absolute;
-			top: 50%;
+			top: 60%;
 			left: 50%;
 			transform: translate(-50%, -50%);
 			text-align: center;
@@ -78,10 +120,18 @@
 
 		::-webkit-input-placeholder {
 			color: rgb(0, 0, 0);
+			}
 	</style>
 </head>
 
 <body>
+	<div class="rot">
+			<div class="img1"></div>
+			<div class="img2"></div>
+			<div class="img3"></div>
+			<div class="img4"></div>
+			<div class="img5"></div>
+		</div>
 	<form class="box">
 		<!-- Unnamed (文本框) -->
 		<div id="u1" class="ax_default text_field">
@@ -100,13 +150,22 @@
 		
 		<!-- Unnamed (文本框) -->
 		<div id="u5" class="ax_default text_field">
-		    选择背景颜色：<input  type="color" id="u5_input">
+		    选择背景颜色:<input  type="color" id="u5_input">
 		</div>
 
 		<!-- Unnamed (提交按钮) -->
 		<div id="u4" class="ax_default html_button">
 			<input id="u4_input" type="button" value="提交" />
-			<script>
+		</div>
+		<h1>加入缓存功能</h1>
+		<h1>输入一次即可</h1>
+	</form>
+</body>
+<script>
+				document.getElementById("u1_input").value=localStorage.value1;
+				document.getElementById("u2_input").value=localStorage.value2;
+				document.getElementById("u3_input").value=localStorage.value3;
+				document.getElementById("u5_input").value=localStorage.value5;
 				document.getElementById("u4_input").onclick = function () {
 					if (window.localStorage) {
 						localStorage.value1 = document.getElementById("u1_input").value;
@@ -119,7 +178,4 @@
 					}
 				}
 			</script>
-		</div>
-	</form>
-</body>
 </html>

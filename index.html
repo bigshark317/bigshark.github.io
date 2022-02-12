@@ -17,6 +17,7 @@
 				font-family: sans-serif;
 				background: linear-gradient(60deg, #ebcbd4, #d7f0db);
 				perspective: 1000px;
+				overflow: hidden;
 			}
 
 			@keyframes sc {
@@ -40,7 +41,7 @@
 			.rot {
 				width: 300px;
 				height: 170px;
-				margin: 50px auto;
+				margin: 30px auto;
 				border-radius: 40px;
 				transform-style: preserve-3d;
 				animation: rota 50s linear infinite, sc 2s;
@@ -55,25 +56,22 @@
 				width: 100%;
 				height: 100%;
 				background-size: 100% 100%;
+				background-image: url(1.jpg);
 			}
 
 			.rot .img1 {
-				background-image: url(1.jpg);
 				transform: translateZ(250px);
 			}
 
 			.rot .img2 {
-				background-image: url(2.jpg);
 				transform: translateZ(-250px) rotateY(180deg);
 			}
 
 			.rot .img3 {
-				background-image: url(3.jpg);
 				transform: translateX(-250px) rotateY(-90deg);
 			}
 
 			.rot .img4 {
-				background-image: url(4.jpg);
 				transform: translateX(250px) rotateY(90deg);
 			}
 
@@ -184,10 +182,10 @@
 			rot.style.visibility="visible"
 			box.style.visibility="visible"
 		}, 1500);
-		document.getElementById("u1_input").value = localStorage.value1;
-		document.getElementById("u2_input").value = localStorage.value2;
-		document.getElementById("u3_input").value = localStorage.value3;
-		document.getElementById("u5_input").value = localStorage.value5;
+		document.getElementById("u1_input").value = localStorage.value1 == undefined?'':localStorage.value1;
+		document.getElementById("u2_input").value = localStorage.value2 == undefined?'':localStorage.value2;
+		document.getElementById("u3_input").value = localStorage.value3 == undefined?'':localStorage.value3;
+		document.getElementById("u5_input").value = localStorage.value5 == undefined?'':localStorage.value4;
 		document.getElementById("u4_input").onclick = function() {
 			if (window.localStorage) {
 				localStorage.value1 = document.getElementById("u1_input").value;

@@ -1,201 +1,229 @@
 <!DOCTYPE>
 <html lang="en">
 
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-		<meta http-equiv="Pragma" content="no-cache" />
-		<meta http-equiv="Expires" content="0" />
-		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
-		<title>鲨鲨鲨鱼</title>
-		<link rel="stylesheet" href="css/weui.min.css">
-		<script type="text/javascript" src="js/Untitled-1.js" charset="UTF-8"></script>
-		<style>
-			body {
-				margin: 0;
-				padding: 0;
-				font-family: sans-serif;
-				background: linear-gradient(60deg, #ebcbd4, #d7f0db);
-				perspective: 1000px;
-				overflow: hidden;
-			}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <title>鲨鲨鲨鱼</title>
+    <link rel="stylesheet" href="css/weui.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: linear-gradient(60deg, #ebcbd4, #d7f0db);
+            perspective: 1000px;
+            overflow: hidden;
+        }
+        
+        @keyframes sc {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes rota {
+            from {}
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+        
+        .rot {
+            width: 300px;
+            height: 170px;
+            margin: 30px auto;
+            border-radius: 40px;
+            transform-style: preserve-3d;
+            animation: rota 50s linear infinite, sc 2s;
+            animation-delay: 1s;
+            visibility: hidden;
+        }
+        
+        .rot div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: 100% 100%;
+            background-image: url(1.jpg);
+        }
+        
+        .rot .img1 {
+            transform: translateZ(250px);
+        }
+        
+        .rot .img2 {
+            transform: translateZ(-250px) rotateY(180deg);
+        }
+        
+        .rot .img3 {
+            transform: translateX(-250px) rotateY(-90deg);
+        }
+        
+        .rot .img4 {
+            transform: translateX(250px) rotateY(90deg);
+        }
+        
+        .box {
+            width: 300px;
+            padding: 40px;
+            margin: 15px auto;
+            text-align: center;
+            border-radius: 10%;
+            background-color: rgba(255, 255, 255, 0.3);
+            animation: sc 2s;
+            animation-delay: 1s;
+            visibility: hidden;
+        }
+        
+        .box input[type="text"] {
+            border: 0;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #3498db;
+            padding: 14px 10px;
+            width: 200px;
+            outline: none;
+            color: black;
+            border-radius: 24px;
+            transition: 0.25s;
+        }
+        
+        .box input[type="text"]:focus {
+            width: 280px;
+            border-color: #372af5;
+            background-color: white;
+        }
+        
+        .box h1 {
+            color: rgb(255, 255, 255);
+            font-family: Sriracha;
+        }
+        
+        .box input[type="button"] {
+            border: 0;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #2ecc71;
+            padding: 14px 40px;
+            width: 200px;
+            outline: none;
+            color: black;
+            border-radius: 24px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        
+        .box input[type="submit"]:active {
+            opacity: 0.1;
+        }
+        
+         ::-webkit-input-placeholder {
+            color: rgb(0, 0, 0);
+        }
+        
+        .box .random img {
+            width: 30px;
+        }
+        
+        #u1,
+        #u2,
+        #u3 {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+    </style>
+</head>
 
-			@keyframes sc {
-				from {
-					transform: scale(0);
-				}
+<body>
+    <div class="rot">
+        <div class="img1"></div>
+        <div class="img2"></div>
+        <div class="img3"></div>
+        <div class="img4"></div>
+    </div>
+    <form class="box">
+        <!-- Unnamed (文本框) -->
+        <div id="u1" class="ax_default text_field">
+            <input id="u1_input" type="text" placeholder="学号" maxlength="11" /><span class="random" id="random1">
+					<img src="img/random.png" >
+				</span>
+        </div>
 
-				to {
-					transform: scale(1);
-				}
-			}
+        <!-- Unnamed (文本框) -->
+        <div id="u2" class="ax_default text_field">
+            <input id="u2_input" type="text" placeholder="姓名" /><span class="random" id="random2">
+					<img src="img/random.png" >
+				</span>
+        </div>
 
-			@keyframes rota {
-				from {}
+        <!-- Unnamed (文本框) -->
+        <div id="u3" class="ax_default text_field">
+            <input id="u3_input" type="text" placeholder="学院" /><span class="random" id="random3">
+					<img src="img/random.png" >
+				</span>
+        </div>
 
-				to {
-					transform: rotateY(360deg);
-				}
-			}
+        <!-- Unnamed (文本框) -->
+        <div id="u5" class="ax_default text_field">
+            选择背景颜色:<input type="color" id="u5_input">
+        </div>
 
-			.rot {
-				width: 300px;
-				height: 170px;
-				margin: 30px auto;
-				border-radius: 40px;
-				transform-style: preserve-3d;
-				animation: rota 50s linear infinite, sc 2s;
-				animation-delay: 1s;
-				visibility: hidden;
-			}
+        <!-- Unnamed (提交按钮) -->
+        <div id="u4" class="ax_default html_button">
+            <input id="u4_input" type="button" value="提交" />
+        </div>
+        <h1>加入缓存功能</h1>
+        <h1>输入一次即可</h1>
+    </form>
+</body>
+<script>
+    setTimeout(function() {
+        var rot = document.querySelector(".rot");
+        var box = document.querySelector(".box");
+        rot.style.visibility = "visible"
+        box.style.visibility = "visible"
+    }, 1500);
+    document.getElementById("u1_input").value = localStorage.value1 == undefined ? '' : localStorage.value1;
+    document.getElementById("u2_input").value = localStorage.value2 == undefined ? '' : localStorage.value2;
+    document.getElementById("u3_input").value = localStorage.value3 == undefined ? '' : localStorage.value3;
+    document.getElementById("u5_input").value = localStorage.value5 == undefined ? '' : localStorage.value4;
+    document.getElementById("u4_input").onclick = function() {
+        if (window.localStorage) {
+            localStorage.value1 = document.getElementById("u1_input").value;
+            localStorage.value2 = document.getElementById("u2_input").value;
+            localStorage.value3 = document.getElementById("u3_input").value;
+            localStorage.value5 = document.getElementById("u5_input").value;
+            location.href = "apply.html"
+        } else {
+            alert("不支持")
+        }
+    }
+    const name = []
+    document.getElementById("random1").onclick = function() {
+        document.getElementById("u1_input").value = parseInt(190000000 + Math.random() * 10000000)
+    }
+    const nameArr = ['郭山彤', '梁敦厦', '霍负浪', '虞信品', '马仁毅', '冯州龙', '简务帅', '黎丙赣', '谢尉争', '赵单羽', '孟航沛', '龚开梦', '黄蓝风', '易堃登', '蔡农仲', '高洪泉', '巫家昱', '赵道霄', '章学共', '乐武亮', '费宜鸿', '张津广', '梁胤鸣', '吕聪', '蒋进如', '林豪谱', '孙剑佛', '魏成贯', '卫耿羿', '谢协湃', '岑刚飘', '吴资龙', '陈仓翼', '刘枝迟', '尤帅齐', '孙彩武', '陈莉汐', '程欢亭', '邬肖任', '尤政航', '颜东鑫', '欧有皆', '高季晨', '孙奎汝', '龚韶釜', '费汐家', '钱铮友', '沈锵良', '傅利', '雷友水', '庄蒙少', '陈茗卓', '梁兴力', '欧谱班', '史霄灼', '柳庭沛', '宁儒熙', '吴越潇', '刘中舟', '曹讯波', '王封安', '石和革', '任康焕', '危眺沃', '池湃邦', '车杜炯', '黎宇澄', '符彬政', '刘尉', '钟召云', '王颢锵', '简邦余', '云羿谆', '云悠洋', '穆影焱', '龙绍焱', '胡睿', '岳叔华', '路留时', '尤介辉', '周谷佟', '林文冲', '丁倍卫', '秦树琪', '卢邦楠', '张枫震', '赵勋吟', '赵姬霏', '梁汐季', '张广房', '岑誉胜', '雷亚思', '梁尉寒', '王悟营', '韦鲁郎', '蔡粮鲜', '李具匡', '何望', '谭满铿', '穆漂徽', '夏落兴', '甘风力', '吴军卓', '谭灶声', '许欣英', '穆中管', '武邦致', '谢雄民', '钱锦', '云凌可', '郎朝剑', '余梦茂', '凌瑛昼', '吕映冉', '涂翰毅', '魏争博', '周放', '凌松帆', '文驹治', '柯独杜', '李锐汉', '严锋滕', '李恩妙', '元骞振', '杨舟察', '连解淦', '黎舒旺', '张豆焕', '卢帆新', '华章滕', '林包显', '于泰哲', '盛枫瑾', '侯善稚', '薛敬文', '文子隐', '俞贡延', '韦烽凌', '关戚栾', '袁修纯', '柯河舍', '郭俊立', '岑希伙', '樊辰博', '古驰', '夏思徽', '陶旭笙', '张准辰', '邢编']
+    document.getElementById("random2").onclick = function() {
+        document.getElementById("u2_input").value = nameArr[parseInt(Math.random() * 148)]
+    }
+    const deparments = ['信息学院', '物理学院', '生命科学院', '环境学院', '数学院', '轻型产业学院', '药学院', '化学院']
+    document.getElementById("random3").onclick = function() {
+        document.getElementById("u3_input").value = deparments[parseInt(Math.random() * 8)]
+    }
+</script>
 
-			.rot div {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background-size: 100% 100%;
-				background-image: url(1.jpg);
-			}
-
-			.rot .img1 {
-				transform: translateZ(250px);
-			}
-
-			.rot .img2 {
-				transform: translateZ(-250px) rotateY(180deg);
-			}
-
-			.rot .img3 {
-				transform: translateX(-250px) rotateY(-90deg);
-			}
-
-			.rot .img4 {
-				transform: translateX(250px) rotateY(90deg);
-			}
-
-			.box {
-				width: 300px;
-				padding: 40px;
-				margin: 15px auto;
-				text-align: center;
-				border-radius: 10%;
-				background-color: rgba(255, 255, 255, 0.3);
-				animation: sc 2s;
-				animation-delay: 1s;
-				visibility: hidden;
-			}
-
-			.box input[type="text"] {
-				border: 0;
-				background: none;
-				display: block;
-				margin: 20px auto;
-				text-align: center;
-				border: 2px solid #3498db;
-				padding: 14px 10px;
-				width: 200px;
-				outline: none;
-				color: black;
-				border-radius: 24px;
-				transition: 0.25s;
-			}
-
-			.box input[type="text"]:focus {
-				width: 280px;
-				border-color: #372af5;
-				background-color: white;
-			}
-
-			.box h1 {
-				color: rgb(255, 255, 255);
-				font-family: Sriracha;
-			}
-
-			.box input[type="button"] {
-				border: 0;
-				background: none;
-				display: block;
-				margin: 20px auto;
-				text-align: center;
-				border: 2px solid #2ecc71;
-				padding: 14px 40px;
-				width: 200px;
-				outline: none;
-				color: black;
-				border-radius: 24px;
-				transition: 0.25s;
-				cursor: pointer;
-			}
-
-			.box input[type="submit"]:active {
-				opacity: 0.1;
-			}
-
-			::-webkit-input-placeholder {
-				color: rgb(0, 0, 0);
-			}
-		</style>
-	</head>
-
-	<body>
-		<div class="rot">
-			<div class="img1"></div>
-			<div class="img2"></div>
-			<div class="img3"></div>
-			<div class="img4"></div>
-		</div>
-		<form class="box">
-			<!-- Unnamed (文本框) -->
-			<div id="u1" class="ax_default text_field">
-				<input id="u1_input" type="text" placeholder="学号" maxlength="11" />
-			</div>
-
-			<!-- Unnamed (文本框) -->
-			<div id="u2" class="ax_default text_field">
-				<input id="u2_input" type="text" placeholder="姓名" />
-			</div>
-
-			<!-- Unnamed (文本框) -->
-			<div id="u3" class="ax_default text_field">
-				<input id="u3_input" type="text" placeholder="学院" />
-			</div>
-
-			<!-- Unnamed (文本框) -->
-			<div id="u5" class="ax_default text_field">
-				选择背景颜色:<input type="color" id="u5_input">
-			</div>
-
-			<!-- Unnamed (提交按钮) -->
-			<div id="u4" class="ax_default html_button">
-				<input id="u4_input" type="button" value="提交" />
-			</div>
-			<h1>加入缓存功能</h1>
-			<h1>输入一次即可</h1>
-		</form>
-	</body>
-	<script>
-		setTimeout(function() {
-			var rot=document.querySelector(".rot");
-			var box=document.querySelector(".box");
-			rot.style.visibility="visible"
-			box.style.visibility="visible"
-		}, 1500);
-		document.getElementById("u1_input").value = localStorage.value1 == undefined?'':localStorage.value1;
-		document.getElementById("u2_input").value = localStorage.value2 == undefined?'':localStorage.value2;
-		document.getElementById("u3_input").value = localStorage.value3 == undefined?'':localStorage.value3;
-		document.getElementById("u5_input").value = localStorage.value5 == undefined?'':localStorage.value4;
-		document.getElementById("u4_input").onclick = function() {
-			if (window.localStorage) {
-				localStorage.value1 = document.getElementById("u1_input").value;
-				localStorage.value2 = document.getElementById("u2_input").value;
-				localStorage.value3 = document.getElementById("u3_input").value;
-				localStorage.value5 = document.getElementById("u5_input").value;
-				location.href = "apply.html"
-			} else {
-				alert("不支持")
-			}
-		}
-	</script>
 </html>

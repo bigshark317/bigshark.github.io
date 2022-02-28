@@ -70,14 +70,12 @@
         }
         
         .box {
-            width: 300px;
+            width: 280px;
             padding: 40px;
             margin: 15px auto;
             text-align: center;
             border-radius: 10%;
             background-color: rgba(255, 255, 255, 0.3);
-            animation: sc 2s;
-            animation-delay: 1s;
             transform-style: preserve-3d;
             display: none;
         }
@@ -191,11 +189,12 @@
 <script>
     var rot = document.querySelector(".rot");
     var box = document.querySelector(".box");
-    rot.style.display = 'block'
-    box.style.display = 'block'
     setTimeout(() => {
+        rot.style.display = 'block'
+        box.style.display = 'block'
+        box.style.animation = 'sc 2s'
         rot.style.animation = ' rota 50s linear infinite'
-    }, 3200)
+    }, 1000)
     document.getElementById("u1_input").value = localStorage.value1 == undefined ? '' : localStorage.value1;
     document.getElementById("u2_input").value = localStorage.value2 == undefined ? '' : localStorage.value2;
     document.getElementById("u3_input").value = localStorage.value3 == undefined ? '' : localStorage.value3;

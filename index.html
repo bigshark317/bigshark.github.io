@@ -1,4 +1,3 @@
-<!DOCTYPE>
 <html lang="en">
 
 <head>
@@ -41,9 +40,7 @@
             margin: 30px auto;
             border-radius: 40px;
             transform-style: preserve-3d;
-            animation: rota 50s linear infinite, sc 2s;
-            animation-delay: 1s;
-            visibility: hidden;
+            display: none;
         }
         
         .rot div {
@@ -81,7 +78,8 @@
             background-color: rgba(255, 255, 255, 0.3);
             animation: sc 2s;
             animation-delay: 1s;
-            visibility: hidden;
+            transform-style: preserve-3d;
+            display: none;
         }
         
         .box input[type="text"] {
@@ -149,13 +147,13 @@
 </head>
 
 <body>
-    <div class="rot">
-        <div class="img1"></div>
-        <div class="img2"></div>
-        <div class="img3"></div>
-        <div class="img4"></div>
-    </div>
     <form class="box">
+        <div class="rot">
+            <div class="img1"></div>
+            <div class="img2"></div>
+            <div class="img3"></div>
+            <div class="img4"></div>
+        </div>
         <!-- Unnamed (文本框) -->
         <div id="u1" class="ax_default text_field">
             <input id="u1_input" type="text" placeholder="学号" maxlength="11" /><span class="random" id="random1">
@@ -191,12 +189,13 @@
     </form>
 </body>
 <script>
-    setTimeout(function() {
-        var rot = document.querySelector(".rot");
-        var box = document.querySelector(".box");
-        rot.style.visibility = "visible"
-        box.style.visibility = "visible"
-    }, 1500);
+    var rot = document.querySelector(".rot");
+    var box = document.querySelector(".box");
+    rot.style.display = 'block'
+    box.style.display = 'block'
+    setTimeout(() => {
+        rot.style.animation = ' rota 50s linear infinite'
+    }, 3200)
     document.getElementById("u1_input").value = localStorage.value1 == undefined ? '' : localStorage.value1;
     document.getElementById("u2_input").value = localStorage.value2 == undefined ? '' : localStorage.value2;
     document.getElementById("u3_input").value = localStorage.value3 == undefined ? '' : localStorage.value3;
@@ -214,7 +213,7 @@
     }
     const name = []
     document.getElementById("random1").onclick = function() {
-        document.getElementById("u1_input").value = parseInt(190000000 + Math.random() * 10000000)
+        document.getElementById("u1_input").value = parseInt(180000000 + Math.random() * 40000000)
     }
     const nameArr = ['郭山彤', '梁敦厦', '霍负浪', '虞信品', '马仁毅', '冯州龙', '简务帅', '黎丙赣', '谢尉争', '赵单羽', '孟航沛', '龚开梦', '黄蓝风', '易堃登', '蔡农仲', '高洪泉', '巫家昱', '赵道霄', '章学共', '乐武亮', '费宜鸿', '张津广', '梁胤鸣', '吕聪', '蒋进如', '林豪谱', '孙剑佛', '魏成贯', '卫耿羿', '谢协湃', '岑刚飘', '吴资龙', '陈仓翼', '刘枝迟', '尤帅齐', '孙彩武', '陈莉汐', '程欢亭', '邬肖任', '尤政航', '颜东鑫', '欧有皆', '高季晨', '孙奎汝', '龚韶釜', '费汐家', '钱铮友', '沈锵良', '傅利', '雷友水', '庄蒙少', '陈茗卓', '梁兴力', '欧谱班', '史霄灼', '柳庭沛', '宁儒熙', '吴越潇', '刘中舟', '曹讯波', '王封安', '石和革', '任康焕', '危眺沃', '池湃邦', '车杜炯', '黎宇澄', '符彬政', '刘尉', '钟召云', '王颢锵', '简邦余', '云羿谆', '云悠洋', '穆影焱', '龙绍焱', '胡睿', '岳叔华', '路留时', '尤介辉', '周谷佟', '林文冲', '丁倍卫', '秦树琪', '卢邦楠', '张枫震', '赵勋吟', '赵姬霏', '梁汐季', '张广房', '岑誉胜', '雷亚思', '梁尉寒', '王悟营', '韦鲁郎', '蔡粮鲜', '李具匡', '何望', '谭满铿', '穆漂徽', '夏落兴', '甘风力', '吴军卓', '谭灶声', '许欣英', '穆中管', '武邦致', '谢雄民', '钱锦', '云凌可', '郎朝剑', '余梦茂', '凌瑛昼', '吕映冉', '涂翰毅', '魏争博', '周放', '凌松帆', '文驹治', '柯独杜', '李锐汉', '严锋滕', '李恩妙', '元骞振', '杨舟察', '连解淦', '黎舒旺', '张豆焕', '卢帆新', '华章滕', '林包显', '于泰哲', '盛枫瑾', '侯善稚', '薛敬文', '文子隐', '俞贡延', '韦烽凌', '关戚栾', '袁修纯', '柯河舍', '郭俊立', '岑希伙', '樊辰博', '古驰', '夏思徽', '陶旭笙', '张准辰', '邢编']
     document.getElementById("random2").onclick = function() {
